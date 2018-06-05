@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,11 +15,13 @@ public class Ej05 : MonoBehaviour {
 	public Text respuesta;
 	public Slider SlA, SlB, SlC;
 	int A, B, C;
+    int SUma, dividion, Raiz; 
 	public Text ValorA, ValorB, ValorC;
+    
 
-	#endregion
+    #endregion
 
-	public void actualizarValores(){
+    public void actualizarValores(){
 		ValorA.text = SlA.value.ToString();
 		ValorB.text = SlB.value.ToString();
 		ValorC.text = SlC.value.ToString();
@@ -51,11 +54,25 @@ public class Ej05 : MonoBehaviour {
 	}
 
 	public void suma(){
-		respuesta.text = "Debes crear el metodo suma()";
+        A = (int)SlA.value;
+        B = (int)SlB.value;
+        C = (int)SlC.value;
+        SUma = A + B + C;
+        respuesta.text = "la suma es igual a " + SUma + "\n" ;
 	}
 
 	public void division(){
-		respuesta.text = "Debes crear el metodo division()";
+        A = (int)SlA.value;
+        B = (int)SlB.value;
+        if (B != 0)
+        {
+            dividion = A / B;
+            respuesta.text = "la division da como resultado " + dividion + "\n";
+        }
+        else
+        {
+            respuesta.text = "no se puede dividir entre 0";
+        }
 	}
 
 	public void orden(){
@@ -104,8 +121,17 @@ public class Ej05 : MonoBehaviour {
 	}
 
 	public void raiz(){
-		respuesta.text = "Debes crear el metodo raiz()";
-	}
+        double VA ;
+        VA = (double)SlA.value;
+        Math.Sqrt(VA);
+        respuesta.text = "la raiz cuadrada es " + Math.Sqrt(VA) ;
+        if (VA == 0)
+        {
+            respuesta.text = "la raiz cuadrada no es posible con un valor 0" ;
+        }
+       
+
+    }
 
 	public void multiplo(){
 		respuesta.text = "Debes crear el metodo multiplo()";
