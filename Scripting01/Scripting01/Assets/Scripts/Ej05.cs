@@ -58,7 +58,7 @@ public class Ej05 : MonoBehaviour {
         B = (int)SlB.value;
         C = (int)SlC.value;
         SUma = A + B + C;
-        respuesta.text = "la suma es igual a " + SUma + "\n" ;
+        respuesta.text = "la suma " + A + " + " + B + " + " + C + " es igual a " + SUma + "\n" ;
 	}
 
 	public void division(){
@@ -67,7 +67,7 @@ public class Ej05 : MonoBehaviour {
         if (B != 0)
         {
             dividion = A / B;
-            respuesta.text = "la division da como resultado " + dividion + "\n";
+            respuesta.text = "la division de " + A + "/" + B + " da como resultado " + dividion + "\n";
         }
         else
         {
@@ -124,16 +124,30 @@ public class Ej05 : MonoBehaviour {
         double VA ;
         VA = (double)SlA.value;
         Math.Sqrt(VA);
-        respuesta.text = "la raiz cuadrada es " + Math.Sqrt(VA) ;
+        respuesta.text = "la raiz cuadrada de A = " + VA + " es " + Math.Sqrt(VA) ;
         if (VA == 0)
         {
-            respuesta.text = "la raiz cuadrada no es posible con un valor 0" ;
+            respuesta.text = "la raiz cuadrada de A" + VA + "no es posible con un valor 0" ;
         }
-       
 
     }
 
 	public void multiplo(){
-		respuesta.text = "Debes crear el metodo multiplo()";
-	}
+        A = (int)SlA.value;
+        B = (int)SlB.value;
+
+        if (A % B == 0)
+        {
+            respuesta.text = "A = " + A + " , es multiplo de B = " + B;
+        }
+        else
+        {
+            respuesta.text = "A = " + A + " ,no es multiplo de B = " + B;
+        }
+        if (A == 0)
+        {
+            respuesta.text = "A = " + A + " ,no tiene ningun multiplo";
+
+        }
+    }
 }
